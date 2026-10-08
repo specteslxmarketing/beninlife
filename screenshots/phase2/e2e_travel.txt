@@ -1,0 +1,27 @@
+PASS  TRAVEL: test traveller funded (admin grant, ledger entry)
+  traveller balance ₦128000
+PASS  TRAVEL: enough money for both fares — 128000
+PASS  TRAVEL: at the Ivie Air counter (Benin terminal)
+PASS  TRAVEL: "Fly to Lagos" offered at the counter
+  saved screenshots/phase2/travel_01_benin_checkin.png
+PASS  TRAVEL: server refuses a bus ticket at the airport counter — Buy bus tickets at Benin Motor Park (South road)
+PASS  TRAVEL: flight cutscene playing
+  saved screenshots/phase2/travel_02_flight_cutscene.png
+PASS  TRAVEL: fare ₦95,000 debited by the server — 128000 → 33000
+PASS  TRAVEL: cutscene finished, controls back — [true,true]
+PASS  TRAVEL: now in Lagos
+PASS  TRAVEL: arrived at the Lagos terminal kerb — {"x":2124,"y":-95}
+  saved screenshots/phase2/travel_03_lagos_airport.png
+PASS  TRAVEL: promenade
+  saved screenshots/phase2/travel_04_lagos_beach_towers.png
+  saved screenshots/phase2/travel_05_lagos_skyline_from_sea.png
+  saved screenshots/phase2/travel_06_lagos_expressway.png
+PASS  TRAVEL: at the Eko Motor Park ticket booth
+PASS  TRAVEL: "Bus to Benin City" offered
+  saved screenshots/phase2/travel_07_eko_motor_park.png
+  saved screenshots/phase2/travel_08_bus_cutscene.png
+PASS  TRAVEL: bus fare ₦18,000 debited — 33000 → 15000
+PASS  TRAVEL: back in Benin City
+PASS  TRAVEL: arrived at Benin Motor Park — {"x":-14.5,"y":158}
+  saved screenshots/phase2/travel_09_benin_motor_park.png
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

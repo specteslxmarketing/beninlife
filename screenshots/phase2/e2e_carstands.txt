@@ -1,0 +1,13 @@
+PASS  CARSTANDS: at the showroom entrance
+  saved screenshots/phase2/carstands_01_showroom_crown_sign.png
+  saved screenshots/phase2/carstands_02_office_crown_sign.png
+PASS  CARSTANDS: GLK-style SUV offered with its price — Buy GLK 350-style SUV ₦18,000,000 | Colour 1/3
+  saved screenshots/phase2/carstands_03_glk_on_display.png
+  bestx already bought a GLK in an earlier run (2 owned) — not buying another
+  saved screenshots/phase2/carstands_05_rx350_front.png
+  saved screenshots/phase2/carstands_05b_rx350_rear.png
+  at [33.5,93.5], RX slot 33.5,96.5
+PASS  CARSTANDS: bought the RX 350-style SUV
+PASS  CARSTANDS: My Cars app lists the GLK-style
+  saved screenshots/phase2/carstands_06_my_cars_app.png
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

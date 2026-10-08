@@ -1,0 +1,26 @@
+# Render Blueprint — free Docker web service (https://render.com/docs/blueprint-spec)
+# Free tier: no persistent disk (the SQLite DB in DATA_DIR resets on every redeploy/restart/sleep),
+# the service sleeps after ~15 min without traffic (first visit wakes it, ~1 min), WebSockets are supported.
+services:
+  - type: web
+    name: beninlife
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET        # signs login cookies (JWT); generated once by Render
+        generateValue: true
+      - key: ADMIN_PASSWORD        # BEST 𝕏 ("bestx") login — set it yourself in the dashboard (≥ 12 chars)
+        sync: false
+      - key: DATA_DIR              # SQLite + secret dir (ephemeral on the free plan)
+        value: /data
+      - key: BL_TRUST_PROXY        # Render terminates TLS in front of the app → Secure cookies + real client IPs
+        value: "1"
+      # Optional TURN for calls/voice behind strict NATs (JSON array of RTCIceServer):
+      # - key: BL_ICE_SERVERS
+      #   sync: false

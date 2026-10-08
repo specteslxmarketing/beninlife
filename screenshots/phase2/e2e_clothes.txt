@@ -1,0 +1,20 @@
+PASS  CLOTHES: test shopper funded by the admin grant tool
+PASS  CLOTHES: shopper at Uyi Fashion House
+  saved screenshots/phase2/clothes_00_before.png
+  saved screenshots/phase2/clothes_01_store_front.png
+PASS  CLOTHES: "Browse clothes" offered at the shop entrance — shop:clothes
+PASS  CLOTHES: store opens in the phone with prices
+  saved screenshots/phase2/clothes_02_store_menu.png
+PASS  CLOTHES: bought Ankara shirt — server debited 25000 — 505000 → 480000
+PASS  CLOTHES: now wearing Ankara shirt
+  saved screenshots/phase2/clothes_03_ankara_after.png
+PASS  CLOTHES: bought Agbada with fila cap — server debited 150000 — 480000 → 330000
+PASS  CLOTHES: now wearing Agbada with fila cap
+  saved screenshots/phase2/clothes_04_agbada_after.png
+  saved screenshots/phase2/clothes_05_wardrobe_app.png
+PASS  CLOTHES: Wardrobe app changes clothes away from the shop — casual → ankara
+  saved screenshots/phase2/clothes_06_wardrobe_changed.png
+PASS  CLOTHES: outfit saved on the server (survives reload)
+PASS  CLOTHES: other players see the outfit (snapshot style) — ankara
+  start style casual
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

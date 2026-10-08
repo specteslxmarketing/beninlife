@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d0f12" />
+  <title>BENINLIFE — Benin City life-sim (18+)</title>
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/brand/icon-180.png" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="game"></div>
+
+  <!-- AUTH -->
+  <section id="auth" class="screen hidden">
+    <div class="auth-card">
+      <img class="emblem" src="/brand/crown.jpg" alt="BENINLIFE crown emblem" width="96" height="96" />
+      <h1 class="logo">BENIN<span>LIFE</span></h1>
+      <p class="tag">An original multiplayer life-sim set in Benin City, Edo State. 18+ only.</p>
+      <div class="tabs"><button id="tab-login" class="active">Log in</button><button id="tab-signup">Sign up</button></div>
+      <form id="auth-form" autocomplete="on">
+        <label>Username<input id="au-user" name="username" required minlength="3" maxlength="20" pattern="[A-Za-z0-9_]{3,20}" autocomplete="username" /></label>
+        <label>Password<input id="au-pass" name="password" type="password" required minlength="8" autocomplete="current-password" /></label>
+        <label id="age-row" class="check hidden"><input id="au-age" type="checkbox" /> I confirm I am 18 years or older</label>
+        <button id="au-submit" class="primary" type="submit">Log in</button>
+        <p id="au-err" class="err"></p>
+      </form>
+      <p class="fine">Fictional game. Original work — not affiliated with any other game, studio or brand. Money in this game (₦) is virtual and has no real value.</p>
+    </div>
+  </section>
+
+  <!-- LOADING -->
+  <section id="loading" class="screen hidden"><div class="loader"><img class="emblem" src="/brand/crown.jpg" alt="" width="110" height="110" /><h1 class="logo">BENIN<span>LIFE</span></h1><p id="loading-text">Loading Benin City…</p></div></section>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div class="hud-tl panel">
+      <img class="hud-emblem" src="/brand/crown_gold.png" alt="BENINLIFE" />
+      <div class="bal" id="hud-balance">₦0</div>
+      <div class="wanted hidden" id="hud-wanted" title="Wanted level"></div>
+      <div class="row"><span id="hud-time">--:--</span><span id="hud-daynight"></span></div>
+      <div class="obj" id="hud-objective"></div>
+    </div>
+    <div class="hud-tr">
+      <button id="btn-online" class="pill" title="Players">● <span id="hud-online">0</span> online</button>
+      <button id="btn-mute" class="pill" title="Sound on/off">🔊</button>
+      <button id="btn-mic" class="pill" title="Proximity voice chat (talk to players near you)">🎙 Voice off</button>
+      <select id="sel-quality" class="pill" title="Graphics quality"></select>
+      <button id="btn-phone" class="pill phone-btn" title="Phone">📱<span id="phone-badge" class="badge hidden">0</span></button>
+    </div>
+    <canvas id="minimap" width="170" height="170"></canvas>
+    <div id="chat" class="panel">
+      <div id="chat-log"></div>
+      <form id="chat-form"><input id="chat-input" maxlength="300" placeholder="Global chat — press Enter" autocomplete="off" /></form>
+    </div>
+    <button id="btn-chat-toggle" class="pill mobile-only">💬</button>
+    <div id="actions"></div>
+    <div id="work-progress" class="hidden"><span></span><b><i></i></b></div>
+    <div id="joystick" class="mobile-only"><div id="joy-knob"></div></div>
+    <!-- touch controls (phones + iPad): every button maps to the same action as its keyboard key -->
+    <div id="touchpad" class="mobile-only">
+      <button id="tb-car" class="tb big" data-key="e" aria-label="Enter or exit car"><span class="ic">🚗</span><small>Car</small></button>
+      <button id="tb-act" class="tb" data-key="f" aria-label="Action"><span class="ic">✋</span><small>Action</small></button>
+      <button id="tb-brake" class="tb car-only" aria-label="Brake (hold)"><span class="ic">🛑</span><small>Brake</small></button>
+      <button id="tb-horn" class="tb car-only" data-key="h" aria-label="Horn"><span class="ic">📯</span><small>Horn</small></button>
+      <button id="tb-radio" class="tb car-only" data-key="r" aria-label="Radio: next station"><span class="ic">📻</span><small>Radio</small></button>
+      <button id="tb-sprint" class="tb foot-only" aria-label="Run (toggle)"><span class="ic">🏃</span><small>Run</small></button>
+      <button id="tb-jump" class="tb foot-only" data-key=" " aria-label="Jump"><span class="ic">⤴</span><small>Jump</small></button>
+      <button id="tb-mic" class="tb voice-only" aria-label="Push to talk"><span class="ic">🎙</span><small>Talk</small></button>
+      <button id="tb-wpn" class="tb foot-only armed-own" aria-label="Weapon: draw / switch / holster"><span class="ic">🔫</span><small>Weapon</small></button>
+      <button id="tb-aim" class="tb armed-only" aria-label="Aim (toggle)"><span class="ic">◎</span><small>Aim</small></button>
+      <button id="tb-fire" class="tb big armed-only fire" aria-label="Fire (hold)"><span class="ic">✸</span><small>Fire</small></button>
+      <button id="tb-reload" class="tb armed-only" aria-label="Reload"><span class="ic">⟳</span><small>Reload</small></button>
+      <button id="tb-phone" class="tb" aria-label="Phone"><span class="ic">📱</span><small>Phone</small></button>
+    </div>
+    <div id="voice-hud" class="panel hidden"></div>
+    <div id="combat-hud" class="panel hidden">
+      <div class="bar-row"><span>❤</span><b class="bar"><i id="hp-bar"></i></b></div>
+      <div class="bar-row hidden" id="ar-row"><span>🦺</span><b class="bar ar"><i id="ar-bar"></i></b></div>
+      <div id="ammo"></div>
+    </div>
+    <div id="zone-chip" class="pill hidden"></div>
+    <div id="crosshair" class="hidden"><i class="t"></i><i class="b"></i><i class="l"></i><i class="r"></i><i class="dot"></i><i class="hm"></i></div>
+    <div id="hurt-vignette"></div>
+    <div id="downed" class="hidden"><h2>WOUNDED</h2><p id="downed-t"></p></div>
+    <!-- car radio (shown while driving) -->
+    <div id="radio-hud" class="panel hidden">
+      <button id="rd-prev" title="Previous station (Shift+R)">⏮</button>
+      <div class="rd-info"><b id="rd-station">Radio off</b><span id="rd-track"></span></div>
+      <button id="rd-next" title="Next station (R)">⏭</button>
+      <input id="rd-vol" type="range" min="0" max="100" title="Radio volume" aria-label="Radio volume" />
+    </div>
+    <div id="help" class="desktop-only panel">WASD/Arrows move · Shift run · Space jump · V push-to-talk · Drag to look · E car · F/G actions · Space brake · H horn · R / Shift+R radio station (in car) · 1/2/3 draw weapon · X holster · Right-click aim · Left-click fire · R reload · Enter chat (/g gang chat)</div>
+  </div>
+  <div id="toasts"></div>
+
+  <!-- PHONE -->
+  <div id="phone" class="hidden">
+    <div class="phone-frame">
+      <div class="phone-top"><span id="phone-time">--:--</span><span>BENINLIFE</span><button id="phone-close" title="Close">✕</button></div>
+      <div id="phone-screen"></div>
+      <div class="phone-bottom"><button id="phone-home">◯</button></div>
+    </div>
+  </div>
+
+  <!-- CALL OVERLAY (incoming / in-call) -->
+  <div id="call" class="hidden">
+    <div class="call-card">
+      <div class="call-avatar" id="call-avatar">?</div>
+      <div class="call-name" id="call-name"></div>
+      <div class="call-status" id="call-status"></div>
+      <div class="call-note" id="call-note"></div>
+      <div class="call-btns" id="call-btns"></div>
+    </div>
+  </div>
+
+  <!-- CHARACTER CREATOR -->
+  <div id="creator" class="hidden panel">
+    <h2>Create your character</h2>
+    <div class="opt"><span>Body</span><div id="cr-body" class="seg"></div></div>
+    <div class="opt"><span>Skin tone</span><div id="cr-skin" class="swatches"></div></div>
+    <div class="opt"><span>Outfit colour</span><div id="cr-outfit" class="swatches"></div></div>
+    <button id="cr-save" class="primary">Save &amp; enter Benin City</button>
+  </div>
+
+  <!-- INTRO -->
+  <div id="intro" class="hidden">
+    <div class="bar top"></div><div class="bar bottom"></div>
+    <div id="intro-text"></div>
+    <p class="intro-note">Fictional game world — BEST 𝕏, characters, businesses and events are invented.</p>
+    <button id="intro-skip" class="pill">Skip ▸</button>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

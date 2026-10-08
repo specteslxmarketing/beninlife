@@ -1,0 +1,30 @@
+// Quick visual check: registers a throwaway user, loads the game and captures one frame.
+import { chromium } from 'playwright';
+const base = process.env.BASE ?? 'http://localhost:3000';
+const hour = process.argv[2] ?? '10';
+const quality = process.argv[3] ?? 'medium';
+const out = process.argv[4] ?? 'screenshots/_quick.png';
+const yaw = process.argv[5];
+const browser = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist', '--enable-webgl'] });
+const ctx = await browser.newContext({ viewport: { width: 1280, height: 720 } });
+const page = await ctx.newPage();
+page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') console.log('[console]', m.type(), m.text().slice(0, 300)); });
+page.on('pageerror', (e) => console.log('[pageerror]', e.message));
+const u = 'qs_' + Math.random().toString(36).slice(2, 8);
+const r = await ctx.request.post(base + '/api/register', { data: { username: u, password: 'testpass123', ageConfirmed: true } });
+console.log('register', r.status());
+await ctx.request.post(base + '/api/login', { data: { username: u, password: 'testpass123' } });
+await page.addInitScript((q) => localStorage.setItem('bl_quality', q), quality);
+await page.goto(`${base}/?hour=${hour}&capture=1`);
+await page.waitForFunction(() => (window as unknown as { __beninlife?: unknown }).__beninlife, null, { timeout: 60000 });
+// save default appearance & skip intro for the quick check
+await page.click('#cr-save');
+await page.waitForTimeout(500);
+if (await page.isVisible('#intro-skip')) await page.click('#intro-skip');
+if (yaw) await page.evaluate((y) => { (window as any).__beninlife.controls.camYaw = Number(y); }, yaw);
+const t0 = Date.now();
+await page.waitForTimeout(4000);
+const fps = await page.evaluate(`new Promise((res) => { let n = 0; const s = performance.now(); const f = () => { n++; if (performance.now() - s < 2000) requestAnimationFrame(f); else res(n / 2); }; f(); })`);
+console.log('fps', fps, 'elapsed', Date.now() - t0);
+await page.screenshot({ path: out });
+await browser.close();

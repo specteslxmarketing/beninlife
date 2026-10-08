@@ -1,0 +1,16 @@
+PASS  CONTACTS: saved player appears in Contacts app
+  saved screenshots/phase2/calls_01_contacts_app.png
+PASS  CALLS: callee sees incoming call overlay
+PASS  CALLS: WebRTC offer/answer negotiated end-to-end through server signalling (both peers stable with remote SDP)
+N/A   CALLS: ICE media path not verifiable here — this sandbox's Chrome sees no network interfaces (0 host ICE candidates, even for an in-page loopback test), so audio cannot flow headlessly on this box
+PASS  CALLS: microphone stream acquired (fake device)
+  saved screenshots/phase2/calls_04_in_call_connected.png
+  saved screenshots/phase2/calls_05_in_call_connected_callee.png
+PASS  CALLS: hang up ends the call for both
+PASS  CALLS: reject ends the caller's ringing
+PASS  CALLS: calling an OFFLINE player shows OFFLINE and does not connect — 📞 Call with Ivie_yw7b ended📞 Ivie_yw7b declined the call📵 Away_yw7b is OFFLINE — call could not connect (logged as missed)
+  saved screenshots/phase2/calls_06_offline_player.png
+PASS  CALLS: call log lists completed, declined and offline calls — ‹CallsVoice calls are peer-to-peer (WebRTC). Calls to offline players are logged as missed.↗ Away_yw7bOutgoing · offline · just now📞↗ Ivie_yw7bOutgoing · declined · just now📞↗ Ivie_yw7bOutgoing · 1:
+  saved screenshots/phase2/calls_07_call_log.png
+  saved screenshots/phase2/calls_08_call_log_callee.png
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

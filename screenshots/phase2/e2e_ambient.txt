@@ -1,0 +1,14 @@
+  ambient: {"cars":5,"walkers":5,"benin":3,"lagos":2}
+PASS  AMBIENT: a few traffic cars (≤ 8 per city) — {"cars":5,"walkers":5,"benin":3,"lagos":2}
+PASS  AMBIENT: a few pedestrians (≤ 10 total) — 5
+  fps 57 (software GL — the simulation runs slower than real time here)
+PASS  AMBIENT: cars are driving — 3/3 moved
+PASS  AMBIENT: cars stay on the roads — [[103,-2,4],[-3,-42,1],[21,7,7]]
+PASS  AMBIENT: roundabout lights alternate (E/W vs N/S) — green/red
+PASS  AMBIENT: a car waits at a red light
+  saved screenshots/phase2/ambient_01_roundabout_traffic_lights.png
+  saved screenshots/phase2/ambient_02_traffic_car.png
+  saved screenshots/phase2/ambient_03_pedestrian.png
+PASS  AMBIENT: traffic stops for a player standing in the lane
+  saved screenshots/phase2/ambient_04_lagos_traffic_promenade.png
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

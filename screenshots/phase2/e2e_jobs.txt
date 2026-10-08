@@ -1,0 +1,39 @@
+PASS  JOBS: teleport to Ring Road Car Wash
+  actions at the JOBS board: station:start:carwash
+PASS  JOBS: Car-wash attendant shift started
+  saved screenshots/phase2/jobs_01_carwash_customer_car.png
+  step 1 (Soap the bonnet) actions=[station:work:0] done=[true,false,false,false]
+  saved screenshots/phase2/jobs_02_carwash_working.png
+  step 2 (Scrub the left side) actions=[station:work:1] done=[true,true,false,false]
+  step 3 (Rinse the boot) actions=[station:work:2] done=[true,true,true,false]
+  retrying step 4
+  retrying step 4
+  step 4 (Wipe the right side dry) actions=[station:work:3] done=[false,false,false,false]
+PASS  JOBS: Car-wash attendant — server paid 600 for a finished car — 5000000600 → 5000001200
+  saved screenshots/phase2/jobs_03_carwash_paid.png
+PASS  JOBS: Car-wash attendant shift ended
+PASS  JOBS: teleport to Osaze Mechanic Workshop
+  actions at the JOBS board: station:start:mechanic
+PASS  JOBS: Mechanic shift started
+  saved screenshots/phase2/jobs_04_mechanic_customer_car.png
+  step 1 (Open the bonnet & check the engine) actions=[station:work:0] done=[true,false,false,false]
+  saved screenshots/phase2/jobs_05_mechanic_working.png
+  step 2 (Change the front tyre) actions=[station:work:1] done=[true,true,false,false]
+  step 3 (Top up oil & coolant) actions=[station:work:2] done=[true,true,true,false]
+  retrying step 4
+  retrying step 4
+  step 4 (Test the brakes) actions=[station:work:3] done=[false,false,false,false]
+PASS  JOBS: Mechanic — server paid 1200 for a finished car — 5000001200 → 5000002400
+  saved screenshots/phase2/jobs_06_mechanic_paid.png
+PASS  JOBS: Mechanic shift ended
+PASS  TAXI: in the car
+PASS  TAXI: server assigned a passenger — Uyi at Edo Heritage Bank
+  driving to pickup: true (from the mansion to Edo Heritage Bank)
+  saved screenshots/phase2/jobs_07_taxi_passenger_waving.png
+  actions at pickup: taxi:pickup,car
+PASS  TAXI: passenger picked up, destination + fare from the server — Sapele Rd Plaza fare 1250
+  driving to destination: true
+  actions at destination: taxi:dropoff,car
+PASS  TAXI: fare paid by the server on drop-off — 5000002400 → 5000003650
+  saved screenshots/phase2/jobs_08_taxi_fare_paid.png
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

@@ -1,0 +1,12 @@
+PASS  WEATHER: admin sets light rain (server)
+PASS  WEATHER: client received light rain from the server
+  saved screenshots/phase2/weather_01_light_rain_day.png
+PASS  WEATHER: heavy rain
+PASS  WEATHER: night + heavy rain on the client
+  saved screenshots/phase2/weather_02_heavy_rain_night_wet_road.png
+  saved screenshots/phase2/weather_03_heavy_rain_night_roundabout.png
+PASS  WEATHER: storm
+  saved screenshots/phase2/weather_04_storm_lightning.png
+PASS  WEATHER: lightning strike visible (flash + bolt)
+  saved screenshots/phase2/weather_05_storm_after_flash.png
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

@@ -1,0 +1,19 @@
+  saved screenshots/phase2/police_01_checkpoint_calm.png
+PASS  POLICE: start not wanted — 0
+PASS  POLICE: in the car
+  to start line: true
+  speeding run: true
+PASS  POLICE: speeding past the checkpoint → server sets wanted — wanted=2
+  saved screenshots/phase2/police_02_officers_react_lights.png
+  saved screenshots/phase2/police_03_wanted_hud.png
+PASS  POLICE: arrested next to the officer — wanted cleared
+PASS  POLICE: server fine 5000/star taken — 2★ 5000002050 → 4999992050
+PASS  POLICE: taken to the police station — {"x":100,"z":-10.5}
+  saved screenshots/phase2/police_04_arrested_at_station.png
+  back to west of checkpoint: true
+  speeding run east: true
+PASS  POLICE: wanted again
+PASS  POLICE: "Hand yourself in" offered at the station — police:surrender
+  saved screenshots/phase2/police_05_hand_yourself_in.png
+PASS  POLICE: handed in — 3000/star fine, wanted cleared — 1★
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

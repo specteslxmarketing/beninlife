@@ -1,0 +1,36 @@
+PASS  ARRIVAL: starts boarding the plane cabin
+  saved screenshots/phase2/arrival_01_boarding_cabin.png
+  saved screenshots/phase2/arrival_02_cabin_aisle_wide.png
+  saved screenshots/phase2/arrival_03_cabin_rows_windows.png
+PASS  ARRIVAL: walked down the aisle to row 8 (real movement + cabin collisions)
+  actions at row 8: arrival:seat
+  saved screenshots/phase2/arrival_04_at_row_8.png
+PASS  ARRIVAL: took seat 8B next to the advisor
+PASS  ARRIVAL: advisor speaks "This is Benin City. You should be very careful."
+  saved screenshots/phase2/arrival_05_advisor_careful.png
+PASS  ARRIVAL: advisor speaks the BEST 𝕏 line
+  saved screenshots/phase2/arrival_06_advisor_bestx_line.png
+PASS  ARRIVAL: "You need to work to earn money."
+PASS  ARRIVAL: "... don't join cults."
+  saved screenshots/phase2/arrival_07_advisor_cults.png
+PASS  ARRIVAL: fictional-world note shown
+  saved screenshots/phase2/arrival_08_window_fictional_note.png
+PASS  ARRIVAL: landing cutscene at Benin Airport runway
+  saved screenshots/phase2/arrival_09_landing_approach.png
+  saved screenshots/phase2/arrival_10_touchdown.png
+PASS  ARRIVAL: taxi to the gate
+  saved screenshots/phase2/arrival_11_taxi_window.png
+PASS  ARRIVAL: seatbelt sign off, ready to deplane
+  actions after landing: arrival:stand
+PASS  ARRIVAL: stood up into the aisle
+PASS  ARRIVAL: walked to the open front door
+  saved screenshots/phase2/arrival_12_front_door_open.png
+  actions at door: arrival:exit
+PASS  ARRIVAL: walked off into the Benin Airport arrivals hall (server-placed) — {"x":-10,"z":-236.5,"mode":"play"}
+  saved screenshots/phase2/arrival_13_arrivals_hall.png
+  saved screenshots/phase2/arrival_14_arrivals_hall_wide.png
+  saved screenshots/phase2/arrival_15_benin_airport_terminal.png
+  saved screenshots/phase2/arrival_16_apron_parked_airliner.png
+PASS  ARRIVAL: walked out the front doors onto the airport road
+  saved screenshots/phase2/arrival_17_leaving_airport_road.png
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

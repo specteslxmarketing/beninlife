@@ -1,0 +1,30 @@
+  landscape: {"webgl2":true,"touch":true,"ipadClass":true,"quality":"medium","ua":"Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Mobile/15E148 Safari/604.1"}
+PASS  IPAD landscape: WebGL2 available in WebKit
+PASS  IPAD landscape: touch UI enabled
+PASS  IPAD landscape: iPad detected → auto quality medium
+  saved screenshots/phase2/ipad_landscape_01_creator.png
+PASS  IPAD landscape: joystick + touch pad visible
+  saved screenshots/phase2/ipad_landscape_02_walking_touch.png
+PASS  IPAD landscape: joystick moves the player — 5.0 m
+PASS  IPAD landscape: touch "Car" button enters the car
+PASS  IPAD landscape: in the car, R-key actions are split — radio button shown, reload button hidden
+  saved screenshots/phase2/ipad_landscape_03_in_car_touch.png
+PASS  IPAD landscape: touch joystick drives the car — top speed 13.7 m/s, moved 17.6 m
+PASS  IPAD landscape: touch brake stops the car — 0.00 m/s
+PASS  IPAD landscape: radio HUD shows a station — 📻 Oba Amapiano 95.7
+  saved screenshots/phase2/ipad_landscape_04_radio_touch.png
+  portrait: {"webgl2":true,"touch":true,"ipadClass":true,"quality":"medium","ua":"Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.6 Mobile/15E148 Safari/604.1"}
+PASS  IPAD portrait: WebGL2 available in WebKit
+PASS  IPAD portrait: touch UI enabled
+PASS  IPAD portrait: iPad detected → auto quality medium
+PASS  IPAD portrait: joystick + touch pad visible
+  saved screenshots/phase2/ipad_portrait_02_walking_touch.png
+PASS  IPAD portrait: joystick moves the player — 7.9 m
+PASS  IPAD portrait: touch "Car" button enters the car
+PASS  IPAD portrait: in the car, R-key actions are split — radio button shown, reload button hidden
+  saved screenshots/phase2/ipad_portrait_03_in_car_touch.png
+PASS  IPAD portrait: touch joystick drives the car — top speed 9.5 m/s, moved 8.8 m
+PASS  IPAD portrait: touch brake stops the car — 0.00 m/s
+PASS  IPAD portrait: radio HUD shows a station — 📻 Oba Amapiano 95.7
+  saved screenshots/phase2/ipad_portrait_04_radio_touch.png
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

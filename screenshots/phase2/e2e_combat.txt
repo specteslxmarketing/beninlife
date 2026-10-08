@@ -1,0 +1,45 @@
+PASS  ADMIN: shooter test account funded by the admin grant tool
+PASS  SHOP: "Ekehuan Arms & Licensing" counter offered at the gun-shop door
+PASS  SHOP: firearms licence held (bought server-side)
+PASS  SHOP: pistol + SMG owned with ammunition (server state) — {"pistol":{"mag":12,"reserve":24},"smg":{"mag":30,"reserve":60}}
+PASS  SHOP: body armour fitted — armour 100
+PASS  SHOP: wallet charged by the server — ₦3005000 → ₦2005000
+  saved screenshots/phase2/combat_01_gun_shop_counter.png
+PASS  SAFE ZONE: gun shop forecourt is a safe zone
+PASS  SAFE ZONE: drawing a weapon is refused (client and server) — {"ok":false,"error":"Weapons are disabled here — Ekehuan Arms & Licensing"}
+  saved screenshots/phase2/combat_02_safe_zone_chip.png
+PASS  TARGET: standing outside every safe zone — -44.0,10.5
+PASS  WEAPON: pistol drawn outside the safe zone
+PASS  AIM: crosshair ray lands on the target player — closest 0.02 m
+PASS  AIM: crosshair shown while aiming
+  saved screenshots/phase2/combat_03_aiming_crosshair.png
+  saved screenshots/phase2/combat_04_firing_muzzle_flash.png
+PASS  FIRE: rounds spent from the magazine (server-tracked ammo) — 12 → 9
+PASS  HITS: server-validated hits reduced the target's health — health 100 → 28, hits seen 2/3
+PASS  POLICE: shooter is wanted after firing in public — ★2
+PASS  RELOAD: R reloads the magazine from reserve on foot (server-side) — {"mag":12,"reserve":21}
+PASS  KEYS: R on foot did not switch the radio (radio is only in a car)
+  saved screenshots/phase2/combat_05_target_hurt_hud.png
+  (shooter was arrested by responders — summoning back to the scene)
+PASS  ANTI-CHEAT: server refuses fire faster than the weapon's rate — ok,rate,rate,rate,rate,rate
+PASS  KNOCKDOWN: target downed by gunfire
+PASS  KNOCKDOWN: wounded overlay with ambulance countdown
+  saved screenshots/phase2/combat_06_knocked_down.png
+  saved screenshots/phase2/combat_07_target_down_shooter_view.png
+PASS  POLICE: wanted ★★★ after knocking someone down — ★3
+PASS  HOSPITAL: respawned at Ogbe General Hospital after the ambulance
+PASS  HOSPITAL: ₦ hospital bill charged by the server — ₦5000 → ₦2500
+PASS  HOSPITAL: health restored
+  saved screenshots/phase2/combat_08_hospital_respawn.png
+PASS  POLICE: response unit dispatched to the shooting — units seen 2
+PASS  POLICE: officers pursued the shooter — closest 2 m
+PASS  POLICE: shooter arrested and fined by responding officers — arrests 2, ★0
+PASS  GANGS: real-cult names refused by the server
+PASS  GANGS: gang registered (name, tag, colour, emblem)
+PASS  GANGS: invitation received by the other player
+PASS  GANGS: invite accepted — member list shows both
+PASS  GANGS: gang chat delivered to the leader
+  saved screenshots/phase2/combat_10_gangs_app.png
+PASS  GANGS: members carry the gang tag in snapshots (nametags)
+PASS  TOUCH: ✸ fire button aims and fires (iPad control path)
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

@@ -1,0 +1,14 @@
+  saved screenshots/phase2/char_01_male_full.png
+  saved screenshots/phase2/char_02_male_face.png
+  saved screenshots/phase2/char_03_female_full.png
+  saved screenshots/phase2/char_04_female_face.png
+  saved screenshots/phase2/char_05_male_dark_side.png
+  saved screenshots/phase2/char_06_bestx_white_suit_crown.png
+  saved screenshots/phase2/char_07_bestx_crown_pendant_closeup.png
+  saved screenshots/phase2/char_08_outfit_ankara.png
+  saved screenshots/phase2/char_09_outfit_senator.png
+  saved screenshots/phase2/char_10_outfit_agbada.png
+  saved screenshots/phase2/char_11_outfit_black_suit.png
+  saved screenshots/phase2/char_12_outfit_edo_coral.png
+PASS  CHARACTERS: close-up screenshots captured
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

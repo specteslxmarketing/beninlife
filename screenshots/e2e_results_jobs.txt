@@ -1,0 +1,21 @@
+Entered car: PASS
+Drove to market: PASS
+Pickup accepted by server: PASS → deliver to Grace Assembly Church
+saved screenshots/08a_delivery_pickup_market.png
+Drove to drop-off: PASS
+saved screenshots/04_delivery_job_paid.png
+Delivery payout ₦5,000 -> ₦6,500: PASS
+saved screenshots/04b_night_street_lights.png
+saved screenshots/10_night_car_headlights.png
+saved screenshots/12_phone_dm_sent_player2.png
+P1 unread badge: PASS
+saved screenshots/11_hud_phone_home_unread.png
+saved screenshots/08_phone_messages.png
+saved screenshots/14_phone_wallet.png
+P2 listed ONLINE: PASS
+P2 OFFLINE after disconnect: PASS
+saved screenshots/15_phone_players_online_offline.png
+saved screenshots/16_mobile_character_creator.png
+Mobile auto quality = medium
+saved screenshots/17_mobile_joystick_hud.png
+Mobile joystick moved player 8.0 m: PASS

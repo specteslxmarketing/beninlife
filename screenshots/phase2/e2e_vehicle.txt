@@ -1,0 +1,36 @@
+PASS  DOORS: car model has animated doors
+PASS  DOORS: a door swings open during get-in
+  saved screenshots/phase2/vehicle_01_get_in_door_open.png
+PASS  DOORS: in the driver seat and all doors closed again
+PASS  DRIVING: autopilot drove the car across town through real controls
+PASS  PASSENGER: new player walked in from the airport
+  car at (-52.4, 3.3) rot 25.33; new player from (-43.2, 9.2) → side (-50.2, 2.9) reached=true
+PASS  PASSENGER: "Ride with" offered next to another player's car
+PASS  PASSENGER: server accepted the ride (seat assigned) — {"driver":1,"seat":1}
+PASS  PASSENGER: the driver sees the passenger in their car
+  saved screenshots/phase2/vehicle_02_driver_and_passenger.png
+PASS  DRIVING: car accelerates — speed 19.6 m/s
+PASS  DRIVING: wheels spin — Δ130.7 rad
+PASS  DRIVING: front wheels steer visibly — 0.34 rad
+PASS  DRIVING: body rolls in the corner (sprung suspension) — 0.081 rad
+PASS  DRIVING: car never ends up inside geometry
+PASS  PASSENGER: passenger travels with the car (server moves riders) — moved 8.4 m, 0.4 m from car
+  saved screenshots/phase2/vehicle_03_passenger_view.png
+PASS  PASSENGER: passenger gets out (door animation, standing beside the car)
+PASS  DOORS: driver door opens on exit
+  saved screenshots/phase2/vehicle_04_get_out.png
+PASS  DOORS: driver is out and on foot
+PASS  MOVEMENT: Space jumps
+  voice: A remotes [{"id":80,"voice":true,"d":"3.8"}] on=true
+PASS  VOICE: mic acquired on user tap and WebRTC offer/answer negotiated with the nearby player — {"80":"stable/new"}
+PASS  VOICE: voice HUD shown
+PASS  VOICE: push-to-talk (hold V) enables the mic track
+  saved screenshots/phase2/vehicle_05_voice_ptt.png
+PASS  VOICE: releasing V mutes again
+N/A   VOICE: audio media flow not verifiable here (sandbox Chrome has no network interfaces; same limit as calls)
+PASS  VOICE: peer connection closes when the other player turns voice off
+PASS  RADIO: "Benin FM" renders audible music — rms 0.106 → screenshots/phase2/radio_1.wav
+PASS  RADIO: "Oba Amapiano" renders audible music — rms 0.083 → screenshots/phase2/radio_2.wav
+PASS  RADIO: "Highlife Gold" renders audible music — rms 0.092 → screenshots/phase2/radio_3.wav
+PASS  RADIO: "Eko Street" renders audible music — rms 2.258 → screenshots/phase2/radio_4.wav
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections

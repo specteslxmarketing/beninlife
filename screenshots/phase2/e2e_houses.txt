@@ -1,0 +1,36 @@
+PASS  ADMIN: teleport to mansion gate
+  saved screenshots/phase2/house_01_mansion_gate_crown.png
+  actions at gate: house:enter,house:lock
+PASS  MANSION: owner enters the mansion interior
+  saved screenshots/phase2/house_02_mansion_entrance_guards.png
+  saved screenshots/phase2/house_03_mansion_living_room.png
+  saved screenshots/phase2/house_04_mansion_crown_poster_chandelier.png
+  saved screenshots/phase2/house_05_mansion_dining.png
+  saved screenshots/phase2/house_06_mansion_office.png
+  saved screenshots/phase2/house_07_mansion_master_bedroom.png
+  saved screenshots/phase2/house_08_mansion_bathroom.png
+  saved screenshots/phase2/house_09_mansion_pool_terrace.png
+  saved screenshots/phase2/house_10_mansion_garage_cars.png
+PASS  MANSION: exit returns outside to the gate
+PASS  ADMIN: teleport to GRA Bungalow
+  saved screenshots/phase2/house_11_bungalow_for_sale.png
+  actions at bungalow: house:enter,house:lock
+PASS  HOUSES: bungalow already owned by BEST 𝕏 (bought in an earlier run; purchase is one-time)
+PASS  HOUSES: owner unlocked the door — {"id":"bung1","ownerId":1,"ownerName":"BEST 𝕏","locked":false,"weaponsAllowed":false}
+  saved screenshots/phase2/house_12_bungalow_owned_open.png
+PASS  HOUSE INTERIORS: owner inside bungalow
+PASS  ARRIVAL: new visitor starts at Benin Airport
+  visitor actions at door: house:enter
+PASS  HOUSES: visitor enters the unlocked house
+PASS  HOUSES: owner sees the visitor inside (multiplayer)
+  saved screenshots/phase2/house_13_bungalow_living_two_players.png
+  saved screenshots/phase2/house_14_bungalow_dining.png
+  saved screenshots/phase2/house_15_bungalow_bedroom.png
+  saved screenshots/phase2/house_16_bungalow_kitchen.png
+  saved screenshots/phase2/house_17_bungalow_bathroom.png
+  saved screenshots/phase2/house_18_visitor_view_inside.png
+PASS  HOUSES: owner re-locks from inside
+PASS  HOUSES: visitor exits back outside
+PASS  HOUSES: locked house refuses the visitor — The door is locked
+  saved screenshots/phase2/house_19_locked_outside.png
+PASS  CONSOLE: no browser console errors, uncaught exceptions or unhandled rejections
